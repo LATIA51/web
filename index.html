@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dame La Plata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header con logo + título de ronda -->
+<div id="header">
+    <img id="logoImg" src="image/image0.png" alt="Dame La Plata">
+    <h1 id="tituloRonda">RONDA 1</h1>
+</div>
+
+<div class="neon-line"></div>
+
+<!-- Tablero -->
+<div id="menu"></div>
+
+<!-- Pantalla de pregunta -->
+<div id="pregunta" class="oculto">
+
+    <h1 id="tituloPregunta"></h1>
+
+    <div id="contenido"></div>
+
+    <div class="botones-pregunta">
+        <button id="verRespuesta">VER RESPUESTA</button>
+        <button id="volver">← VOLVER AL TABLERO</button>
+    </div>
+
+</div>
+
+<!-- Botones globales -->
+<div class="botones">
+    <button id="reiniciar">Reiniciar Partida</button>
+    <button id="siguienteRonda">SIGUIENTE RONDA →</button>
+</div>
+
+<script src="preguntas.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
