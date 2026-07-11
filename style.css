@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;700&display=swap');
+
+/* ─── Variables ──────────────────────────────────────────────────────────────── */
+:root {
+    --azul-fondo:    #00102e;
+    --azul-oscuro:   #00173b;
+    --azul-panel:    #041d5c;
+    --azul-celda:    #0a2fa8;
+    --azul-hover:    #1040cc;
+    --cian:          #00e5ff;
+    --cian-suave:    #00b8d4;
+    --oro:           #ffd600;
+    --blanco:        #ffffff;
+    --glow-cian:     0 0 12px #00e5ff88, 0 0 30px #00e5ff44;
+    --glow-oro:      0 0 10px #ffd60088, 0 0 25px #ffd60044;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--azul-fondo);
+    background-image: url('image/image1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--blanco);
+    font-family: 'Rajdhani', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* ─── Header con logo ────────────────────────────────────────────────────────── */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 4px;
+    gap: 24px;
+}
+
+#logoImg {
+    height: 90px;
+    filter: drop-shadow(var(--glow-cian));
+}
+
+#tituloRonda {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 58px;
+    letter-spacing: 6px;
+    color: var(--cian);
+    text-shadow: var(--glow-cian);
+    text-align: center;
+}
+
+/* ─── Separador neón ─────────────────────────────────────────────────────────── */
+.neon-line {
+    height: 2px;
+    margin: 0 20px 10px;
+    background: linear-gradient(90deg, transparent, var(--cian), transparent);
+    box-shadow: var(--glow-cian);
+}
+
+/* ─── Tablero ────────────────────────────────────────────────────────────────── */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    padding: 0 12px 12px;
+}
+
+.categoria {
+    background: linear-gradient(180deg, #061e6e 0%, #031245 100%);
+    border: 2px solid var(--cian);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--glow-cian);
+    overflow: hidden;
+}
+
+.categoria h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--cian);
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid #00e5ff44;
+    text-shadow: var(--glow-cian);
+}
+
+.valor {
+    background: linear-gradient(180deg, #0d3bcc 0%, #0825a0 100%);
+    border-top: 1px solid #ffffff22;
+    padding: 18px 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+    color: var(--oro);
+    text-shadow: var(--glow-oro);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.valor:hover {
+    background: linear-gradient(180deg, #1a4fe0 0%, #1030c0 100%);
+    transform: scale(1.04);
+    box-shadow: inset 0 0 20px #00e5ff22;
+}
+
+.valor:active {
+    transform: scale(0.97);
+}
+
+.usada {
+    visibility: hidden;
+}
+
+/* ─── Pantalla de pregunta ───────────────────────────────────────────────────── */
+.oculto { display: none !important; }
+
+#pregunta {
+    text-align: center;
+    padding: 20px 40px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#tituloPregunta {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 46px;
+    letter-spacing: 4px;
+    color: var(--cian);
+    text-shadow: var(--glow-cian);
+    background: linear-gradient(135deg, #041d5ccc, #031245cc);
+    border: 2px solid var(--cian);
+    border-radius: 10px;
+    padding: 10px 40px;
+    box-shadow: var(--glow-cian);
+}
+
+#contenido {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--blanco);
+    max-width: 1100px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #041d5cbb, #020e36bb);
+    border: 1px solid #00e5ff33;
+    border-radius: 12px;
+    padding: 24px 36px;
+    box-shadow: 0 0 40px #00102e99;
+}
+
+#contenido h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--blanco);
+    line-height: 1.7;
+}
+
+/* Respuesta en oro */
+.respuesta-bloque h1 {
+    color: var(--oro) !important;
+    text-shadow: var(--glow-oro);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+/* ─── Botones de pregunta ────────────────────────────────────────────────────── */
+.botones-pregunta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ─── Botones globales ───────────────────────────────────────────────────────── */
+button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    margin: 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 2px solid var(--cian);
+    background: linear-gradient(135deg, #0d3bcc, #041d5c);
+    color: var(--blanco);
+    text-shadow: 0 0 6px #00e5ff88;
+    box-shadow: var(--glow-cian);
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1a4fe0, #0d2d8a);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px #00e5ffaa, 0 0 40px #00e5ff44;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#verRespuesta {
+    border-color: var(--oro);
+    color: var(--oro);
+    text-shadow: var(--glow-oro);
+    box-shadow: var(--glow-oro);
+}
+
+#verRespuesta:hover {
+    box-shadow: 0 0 18px #ffd600aa, 0 0 40px #ffd60044;
+}
+
+/* ─── Botones inferiores ─────────────────────────────────────────────────────── */
+.botones {
+    text-align: center;
+    padding: 8px 0 16px;
+    border-top: 1px solid #00e5ff22;
+    margin-top: 4px;
+}
+
+#reiniciar {
+    border-color: #ff4444;
+    color: #ff6666;
+    text-shadow: 0 0 6px #ff444488;
+    box-shadow: 0 0 10px #ff444444;
+}
+
+#reiniciar:hover {
+    box-shadow: 0 0 18px #ff4444aa;
+}
+
+/* ─── Media ──────────────────────────────────────────────────────────────────── */
+img {
+    border-radius: 8px;
+    border: 2px solid #00e5ff44;
+    box-shadow: 0 0 20px #00102ecc;
+    max-width: 900px;
+    max-height: 700px;
+}
+
+video {
+    border-radius: 8px;
+    border: 2px solid #00e5ff44;
+    box-shadow: 0 0 20px #00102ecc;
+    max-width: 1000px;
+    max-height: 700px;
+}
+
+audio {
+    width: 680px;
+    margin-top: 8px;
+    filter: hue-rotate(190deg) brightness(1.1);
+}
